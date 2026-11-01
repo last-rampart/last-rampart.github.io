@@ -1,0 +1,271 @@
+/* Le site de Last Rampart : une page de présentation et la politique de confidentialité, en fr et en en.
+   Mêmes codes que le jeu : fond de pierre sombre, or du titre, cadres aux quatre points (frame.png en border-image),
+   pixel art agrandi sans flou. */
+
+:root {
+  --stone-deep: #191717;
+  --stone: #242121;
+  --stone-light: #3a3535;
+  --gold: #f2c14e;
+  --gold-deep: #c98a1b;
+  --ink: #ece4d4;
+  --ink-soft: #b8ad98;
+  --blue: #3d7be0;
+  --red: #d8433b;
+  --gutter: 16px;
+  --measure: 68ch;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--stone-deep);
+  color: var(--ink);
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.55;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--stone-deep);
+}
+
+img.pixel {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+a {
+  color: var(--gold);
+}
+
+a:hover {
+  color: #ffe08a;
+}
+
+.wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* La barre du haut : le nom du jeu et la langue. */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  font-size: 0.9rem;
+}
+
+.topbar a {
+  text-decoration: none;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.brand img {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+}
+
+/* Le cadre aux quatre points du jeu. */
+.panel {
+  border: 24px solid transparent;
+  border-image: url('assets/frame.png') 12 fill / 24px stretch;
+  image-rendering: pixelated;
+}
+
+.panel.gold {
+  border-image-source: url('assets/frame-gold.png');
+}
+
+.panel > :first-child {
+  margin-top: 0;
+}
+
+.panel > :last-child {
+  margin-bottom: 0;
+}
+
+/* L'en-tête : l'image du Play Store, le rempart et son titre. */
+.hero {
+  text-align: center;
+  padding-bottom: 32px;
+}
+
+.hero .banner {
+  display: block;
+  width: 100%;
+  max-width: 1024px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.tagline {
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  color: var(--gold);
+  margin: 24px 0 8px;
+  font-weight: 600;
+}
+
+.lead {
+  max-width: 60ch;
+  margin: 0 auto 24px;
+  color: var(--ink-soft);
+  font-size: 1.1rem;
+}
+
+.store-button {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--gold);
+  color: var(--stone-deep);
+  font-weight: 700;
+  text-decoration: none;
+  border: 3px solid var(--stone-deep);
+  box-shadow: 0 0 0 3px var(--gold-deep), 4px 4px 0 3px #000;
+}
+
+.store-button:hover {
+  background: #ffd76e;
+  color: var(--stone-deep);
+}
+
+.store-button[aria-disabled='true'] {
+  background: var(--stone-light);
+  color: var(--ink-soft);
+  box-shadow: 0 0 0 3px #5a5350;
+  cursor: default;
+}
+
+section {
+  padding: 32px 0;
+}
+
+h2 {
+  color: var(--gold);
+  font-size: 1.6rem;
+  margin: 0 0 16px;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.feature h3 {
+  color: var(--gold);
+  margin: 0 0 6px;
+  font-size: 1.15rem;
+}
+
+.feature p {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.company {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.company img {
+  width: 72px;
+  height: 72px;
+  flex: none;
+}
+
+.company h3 {
+  margin: 0 0 4px;
+  color: var(--gold);
+  font-size: 1.1rem;
+}
+
+.company p {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.company .flavor {
+  font-style: italic;
+  margin-top: 6px;
+  font-size: 0.95rem;
+}
+
+.shots {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.shots img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 3px solid var(--stone-light);
+}
+
+/* Les pages de texte (confidentialité). */
+.document {
+  max-width: calc(var(--measure) + 48px);
+  margin: 16px auto 48px;
+}
+
+.document h1 {
+  color: var(--gold);
+  font-size: 1.9rem;
+  line-height: 1.2;
+  margin: 0 0 8px;
+}
+
+.document h2 {
+  text-align: left;
+  font-size: 1.3rem;
+  margin: 32px 0 8px;
+}
+
+.document .updated {
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.document li {
+  margin-bottom: 4px;
+}
+
+footer {
+  border-top: 3px solid var(--stone-light);
+  padding: 24px 0 40px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 24px;
+  margin-bottom: 8px;
+}
+
+/* Les quatre atouts : deux par ligne sur un écran large, un par ligne sur un téléphone. */
+.grid.pairs {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+}
