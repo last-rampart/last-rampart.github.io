@@ -1,4 +1,3 @@
 # app-ads.txt de Last Rampart (https://last-rampart.github.io/app-ads.txt)
-# Les vendeurs autorisés à vendre les espaces publicitaires du jeu. Ligne à décommenter, avec l'identifiant
-# d'éditeur AdMob (AdMob › Paramètres › Informations sur le compte), dès que le compte AdMob existe :
-# google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+# Les vendeurs autorisés à vendre les espaces publicitaires du jeu : Google AdMob, compte éditeur ci-dessous.
+google.com, pub-5254467251115351, DIRECT, f08c47fec0942fa0
