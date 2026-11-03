@@ -1,0 +1,49 @@
+# Le formulaire d'issue en français. Les identifiants des champs (what, steps…) sont ceux que la page
+# site/signaler.html envoie dans l'adresse pour pré-remplir l'issue : ne pas les renommer sans elle.
+name: Signaler un problème
+description: Un plantage, une règle qui ne fait pas ce qu'elle dit, un texte faux ou manquant.
+title: '[Problème] '
+labels: ['bug', 'joueur']
+body:
+  - type: markdown
+    attributes:
+      value: Merci de nous aider. Décrivez ce qui s'est passé ; tout le reste est facultatif.
+  - type: textarea
+    id: what
+    attributes:
+      label: Ce qui s'est passé
+      description: Et ce que vous attendiez à la place.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Comment le reproduire
+      description: Les étapes, si vous les connaissez. Une capture d'écran se glisse ici.
+  - type: dropdown
+    id: where
+    attributes:
+      label: Où dans le jeu
+      options:
+        - En mission
+        - Au Camp (entre deux missions)
+        - Dans les menus ou les réglages
+        - Au tutoriel
+        - Ailleurs
+  - type: input
+    id: device
+    attributes:
+      label: Appareil
+      description: Le téléphone et sa version d'Android, ou le navigateur.
+      placeholder: Pixel 7, Android 15
+  - type: input
+    id: version
+    attributes:
+      label: Version du jeu
+      description: Si vous la connaissez (le rapport d'erreur la donne, la fiche Play Store aussi).
+  - type: textarea
+    id: report
+    attributes:
+      label: Rapport d'erreur
+      description: Si le jeu a affiché « Un problème est survenu », ou depuis Réglages › Erreurs › Copier.
+      render: text

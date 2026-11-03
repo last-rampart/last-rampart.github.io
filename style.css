@@ -350,3 +350,64 @@ footer nav {
 .grid.pairs {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
 }
+
+/* Le formulaire de signalement (signaler.html, en/report.html) : des champs sur la pierre, dans le cadre du document. */
+.report {
+  display: flex;
+  flex-direction: column;
+  margin-top: 24px;
+}
+
+.report label {
+  color: var(--gold);
+  font-weight: 600;
+  margin: 20px 0 6px;
+}
+
+.report .required {
+  color: var(--ink-soft);
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.report input,
+.report textarea,
+.report select {
+  width: 100%;
+  padding: 10px 12px;
+  font: inherit;
+  color: var(--ink);
+  background: var(--stone-deep);
+  border: 3px solid var(--stone-light);
+  border-radius: 0;
+}
+
+.report input:focus,
+.report textarea:focus,
+.report select:focus {
+  outline: none;
+  border-color: var(--gold-deep);
+}
+
+.report textarea {
+  resize: vertical;
+}
+
+.report textarea.code {
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 0.85rem;
+}
+
+.report .hint {
+  margin: 6px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+.report .store-button {
+  align-self: flex-start;
+  margin-top: 28px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}

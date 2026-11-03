@@ -1,0 +1,7 @@
+# Les gabarits d'issue du dépôt public du site (copiés depuis site/.github/ du dépôt du jeu, à chaque publication).
+# Pas d'issue libre : le joueur passe par un gabarit, ou nous écrit.
+blank_issues_enabled: false
+contact_links:
+  - name: Nous écrire / Email us
+    url: mailto:last.rampart.game@gmail.com
+    about: Sans compte GitHub, par courriel. / Without a GitHub account, by email.

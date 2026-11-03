@@ -1,0 +1,49 @@
+# The English issue form. Field ids (what, steps…) are the ones site/en/report.html sends in the URL to prefill the
+# issue: do not rename them without it.
+name: Report a problem
+description: A crash, a rule that does not do what it says, a wrong or missing text.
+title: '[Problem] '
+labels: ['bug', 'joueur']
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping. Describe what happened; everything else is optional.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: And what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: How to reproduce it
+      description: The steps, if you know them. A screenshot can be dropped here.
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where in the game
+      options:
+        - In a mission
+        - At the Camp (between missions)
+        - In the menus or settings
+        - In the tutorial
+        - Elsewhere
+  - type: input
+    id: device
+    attributes:
+      label: Device
+      description: The phone and its Android version, or the browser.
+      placeholder: Pixel 7, Android 15
+  - type: input
+    id: version
+    attributes:
+      label: Game version
+      description: If you know it (the error report gives it, so does the Play Store listing).
+  - type: textarea
+    id: report
+    attributes:
+      label: Error report
+      description: If the game showed “Something went wrong”, or from Settings › Errors › Copy.
+      render: text

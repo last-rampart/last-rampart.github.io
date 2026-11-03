@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Signaler un problème · Last Rampart</title>
+    <meta name="description" content="Signaler un plantage ou une erreur du jeu Last Rampart." />
+    <link rel="alternate" hreflang="en" href="https://last-rampart.github.io/en/report.html" />
+    <link rel="icon" type="image/png" href="assets/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="topbar">
+        <a class="brand" href="./"><img src="assets/icon.png" alt="" /> Last Rampart</a>
+        <a href="en/report.html" hreflang="en" lang="en">English</a>
+      </header>
+
+      <article class="document panel">
+        <h1>Signaler un problème</h1>
+        <p>
+          Le jeu a planté, une règle ne fait pas ce qu'elle dit, un texte est faux ? Dites-le-nous ici. Seule la
+          première case est obligatoire ; le reste nous aide à retrouver le problème.
+        </p>
+        <p>
+          L'envoi crée un signalement sur GitHub, notre outil de suivi : il vous faut un compte GitHub (gratuit, à créer
+          en une minute si on vous le demande). Votre signalement y est public. Sans compte, ou pour rester discret,
+          <a href="mailto:last.rampart.game@gmail.com?subject=Last%20Rampart%20%3A%20un%20probl%C3%A8me">écrivez-nous</a>.
+        </p>
+
+        <!-- Un formulaire sans script : les champs partent dans l'adresse de la nouvelle issue, dont GitHub pré-remplit
+             le gabarit site/.github/ISSUE_TEMPLATE/erreur.yml (les noms des champs sont ses identifiants). Un rapport
+             d'erreur du jeu fait au plus quelques milliers de caractères : les limites gardent l'adresse acceptable. -->
+        <form class="report" action="https://github.com/last-rampart/last-rampart.github.io/issues/new" method="get">
+          <input type="hidden" name="template" value="erreur.yml" />
+
+          <label for="title">En un titre</label>
+          <input id="title" name="title" type="text" maxlength="120" placeholder="Le Grand Troll traverse un hameau" />
+
+          <label for="what">Ce qui s'est passé <span class="required">(obligatoire)</span></label>
+          <textarea id="what" name="what" rows="5" maxlength="2000" required></textarea>
+          <p class="hint">Et ce que vous attendiez à la place.</p>
+
+          <label for="steps">Comment le reproduire</label>
+          <textarea id="steps" name="steps" rows="4" maxlength="2000"></textarea>
+          <p class="hint">Les étapes, si vous les connaissez. Vous pourrez joindre une capture d'écran sur GitHub.</p>
+
+          <label for="where">Où dans le jeu</label>
+          <select id="where" name="where">
+            <option value="">—</option>
+            <option>En mission</option>
+            <option>Au Camp (entre deux missions)</option>
+            <option>Dans les menus ou les réglages</option>
+            <option>Au tutoriel</option>
+            <option>Ailleurs</option>
+          </select>
+
+          <label for="device">Appareil</label>
+          <input id="device" name="device" type="text" maxlength="120" placeholder="Pixel 7, Android 15" />
+          <p class="hint">Le téléphone et sa version d'Android, ou le navigateur.</p>
+
+          <label for="version">Version du jeu</label>
+          <input id="version" name="version" type="text" maxlength="40" />
+          <p class="hint">Si vous la connaissez : le rapport d'erreur la donne, la fiche Play Store aussi.</p>
+
+          <label for="report">Rapport d'erreur</label>
+          <textarea id="report" name="report" rows="6" maxlength="3000" class="code"></textarea>
+          <p class="hint">
+            Si le jeu a affiché « Un problème est survenu », collez ses détails. Les dernières erreurs sont aussi dans
+            Réglages › Erreurs › Copier.
+          </p>
+
+          <button type="submit" class="store-button">Continuer sur GitHub</button>
+          <p class="hint">GitHub vous montre le signalement rempli ; vous le relisez, puis vous l'envoyez.</p>
+        </form>
+      </article>
+    </div>
+
+    <footer>
+      <div class="wrap">
+        <nav>
+          <a href="./">Accueil</a>
+          <a href="confidentialite.html">Politique de confidentialité</a>
+          <a href="mailto:last.rampart.game@gmail.com">Contact</a>
+          <a href="en/report.html" hreflang="en" lang="en">English</a>
+        </nav>
+        <p>© 2026 LastRampart</p>
+      </div>
+    </footer>
+  </body>
+</html>

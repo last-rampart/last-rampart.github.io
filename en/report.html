@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Report a problem · Last Rampart</title>
+    <meta name="description" content="Report a crash or a bug in the game Last Rampart." />
+    <link rel="alternate" hreflang="fr" href="https://last-rampart.github.io/signaler.html" />
+    <link rel="icon" type="image/png" href="../assets/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="topbar">
+        <a class="brand" href="./"><img src="../assets/icon.png" alt="" /> Last Rampart</a>
+        <a href="../signaler.html" hreflang="fr" lang="fr">Français</a>
+      </header>
+
+      <article class="document panel">
+        <h1>Report a problem</h1>
+        <p>
+          The game crashed, a rule does not do what it says, a text is wrong? Tell us here. Only the first box is
+          required; the rest helps us find the problem.
+        </p>
+        <p>
+          Sending creates a report on GitHub, our issue tracker: you need a GitHub account (free, a minute to create if
+          asked). Your report is public there. Without an account, or to keep it private,
+          <a href="mailto:last.rampart.game@gmail.com?subject=Last%20Rampart%3A%20a%20problem">email us</a>.
+        </p>
+
+        <!-- A form without script: the fields go into the new issue's URL, from which GitHub prefills the template
+             site/.github/ISSUE_TEMPLATE/bug.yml (field names are its ids). The limits keep the URL acceptable. -->
+        <form class="report" action="https://github.com/last-rampart/last-rampart.github.io/issues/new" method="get">
+          <input type="hidden" name="template" value="bug.yml" />
+
+          <label for="title">In one line</label>
+          <input id="title" name="title" type="text" maxlength="120" placeholder="The Great Troll walks through a hamlet" />
+
+          <label for="what">What happened <span class="required">(required)</span></label>
+          <textarea id="what" name="what" rows="5" maxlength="2000" required></textarea>
+          <p class="hint">And what you expected instead.</p>
+
+          <label for="steps">How to reproduce it</label>
+          <textarea id="steps" name="steps" rows="4" maxlength="2000"></textarea>
+          <p class="hint">The steps, if you know them. You will be able to attach a screenshot on GitHub.</p>
+
+          <label for="where">Where in the game</label>
+          <select id="where" name="where">
+            <option value="">—</option>
+            <option>In a mission</option>
+            <option>At the Camp (between missions)</option>
+            <option>In the menus or settings</option>
+            <option>In the tutorial</option>
+            <option>Elsewhere</option>
+          </select>
+
+          <label for="device">Device</label>
+          <input id="device" name="device" type="text" maxlength="120" placeholder="Pixel 7, Android 15" />
+          <p class="hint">The phone and its Android version, or the browser.</p>
+
+          <label for="version">Game version</label>
+          <input id="version" name="version" type="text" maxlength="40" />
+          <p class="hint">If you know it: the error report gives it, so does the Play Store listing.</p>
+
+          <label for="report">Error report</label>
+          <textarea id="report" name="report" rows="6" maxlength="3000" class="code"></textarea>
+          <p class="hint">
+            If the game showed “Something went wrong”, paste its details. The latest errors are also in
+            Settings › Errors › Copy.
+          </p>
+
+          <button type="submit" class="store-button">Continue on GitHub</button>
+          <p class="hint">GitHub shows you the filled-in report; you read it over, then send it.</p>
+        </form>
+      </article>
+    </div>
+
+    <footer>
+      <div class="wrap">
+        <nav>
+          <a href="./">Home</a>
+          <a href="privacy.html">Privacy policy</a>
+          <a href="mailto:last.rampart.game@gmail.com">Contact</a>
+          <a href="../signaler.html" hreflang="fr" lang="fr">Français</a>
+        </nav>
+        <p>© 2026 LastRampart</p>
+      </div>
+    </footer>
+  </body>
+</html>
