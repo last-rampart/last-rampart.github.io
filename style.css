@@ -422,3 +422,21 @@ footer nav {
   font-weight: 700;
   cursor: pointer;
 }
+
+/* La bêta fermée (#beta) : les trois étapes numérotées dans leur titre, puis la demande dans le cadre doré. */
+.section-lead {
+  max-width: 640px;
+  margin: 0 auto 20px;
+  text-align: center;
+  color: var(--ink-soft);
+}
+
+.steps {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+}
+
+.beta-ask p {
+  margin: 0;
+}
